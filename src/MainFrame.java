@@ -126,7 +126,7 @@ public class MainFrame extends MainFrameDesign implements Runnable{
 	
 	private void convert() throws IOException
 	{
-		String tempOutputPath = fileOutputPath+"temp_"+Random.getRandomString(8);
+		String tempOutputPath = fileOutputPath+"temp_"+Random.getRandomString(8)+"\\";
 		Size deviceRes = new Size(768, 1024);
 		////////STATUS ////////
 		setProgress(1, "Epub preperation initialized");
