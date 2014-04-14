@@ -1,4 +1,3 @@
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -189,10 +188,8 @@ public class MainFrame extends MainFrameDesign implements Runnable{
 		setProgress(64, "Xhtml page creation initialized");
 		////////STATUS ////////
 		XhtmlPageCreation pageCreation = new XhtmlPageCreation(doc1);
-		//
-		// "\\OEBPS" muss bei der nächsten einbindung weg!
-		//
-		pageCreation.createXhtmlPages(tempOutputPath+"\\OEBPS", txtFormat);
+		
+		pageCreation.createXhtmlPages(tempOutputPazh, txtFormat);
 		////////STATUS ////////
 		setProgress(80, "Xhtml page creation finished");
 		////////STATUS ////////
