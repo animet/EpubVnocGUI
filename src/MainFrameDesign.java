@@ -1,4 +1,3 @@
-
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
@@ -65,7 +64,7 @@ public class MainFrameDesign {
 	protected void initGuiComponents()
 	{
 		mainFrame = new JFrame();
-		mainFrame.setTitle("EpubConverter");
+		mainFrame.setTitle("EpubVnocGUI");
 		mainFrame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		mainFrame.setResizable(false);
 		
