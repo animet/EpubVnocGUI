@@ -193,12 +193,7 @@ public class MainFrame extends MainFrameDesign implements Runnable{
 		setProgress(64, "Xhtml page creation initialized");
 		////////STATUS ////////
 		XhtmlPageCreation pageCreation = new XhtmlPageCreation(doc1);
-<<<<<<< HEAD
 		pageCreation.createXhtmlPages(tempOutputPath, txtFormat);
-=======
-		
-		pageCreation.createXhtmlPages(tempOutputPazh, txtFormat);
->>>>>>> 107ca9df6066b41a9fd24c29ef4d77c8a5fd82bd
 		////////STATUS ////////
 		setProgress(80, "Xhtml page creation finished");
 		////////STATUS ////////
