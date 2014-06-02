@@ -1,4 +1,3 @@
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -127,7 +126,7 @@ public class MainFrame extends MainFrameDesign implements Runnable{
 	
 	private void convert() throws IOException
 	{
-		String tempOutputPath = fileOutputPath+"temp_"+Random.getRandomString(8);
+		String tempOutputPath = fileOutputPath+"temp_"+Random.getRandomString(8)+"\\";
 		Size deviceRes = new Size(768, 1024);
 		if(tfDeviceResolution.getText().contains("x"))
 		{
@@ -194,7 +193,12 @@ public class MainFrame extends MainFrameDesign implements Runnable{
 		setProgress(64, "Xhtml page creation initialized");
 		////////STATUS ////////
 		XhtmlPageCreation pageCreation = new XhtmlPageCreation(doc1);
+<<<<<<< HEAD
 		pageCreation.createXhtmlPages(tempOutputPath, txtFormat);
+=======
+		
+		pageCreation.createXhtmlPages(tempOutputPazh, txtFormat);
+>>>>>>> 107ca9df6066b41a9fd24c29ef4d77c8a5fd82bd
 		////////STATUS ////////
 		setProgress(80, "Xhtml page creation finished");
 		////////STATUS ////////
