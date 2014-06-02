@@ -12,8 +12,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import Stati.Status;
 import Vnoc.Misc.Random;
-import Vnoc.Zip.CreateZip;
-import Vnoc.Conversion.PdfToDocument;
+import Vnoc.Zip.EpubZipCreation;
+import Vnoc.Creation.Epub.PdfToDocument;
 import Vnoc.Creation.Epub.EpubPreparation;
 import Vnoc.Creation.Epub.ImageCreation;
 import Vnoc.Creation.Epub.TableOfContentCreation;
@@ -129,6 +129,11 @@ public class MainFrame extends MainFrameDesign implements Runnable{
 	{
 		String tempOutputPath = fileOutputPath+"temp_"+Random.getRandomString(8);
 		Size deviceRes = new Size(768, 1024);
+		if(tfDeviceResolution.getText().contains("x"))
+		{
+			deviceRes = new Size(Integer.valueOf(tfDeviceResolution.getText().split("x")[0])
+					, Integer.valueOf(tfDeviceResolution.getText().split("x")[1]));
+		}
 		////////STATUS ////////
 		setProgress(1, "Epub preperation initialized");
 		////////STATUS ////////
@@ -189,10 +194,7 @@ public class MainFrame extends MainFrameDesign implements Runnable{
 		setProgress(64, "Xhtml page creation initialized");
 		////////STATUS ////////
 		XhtmlPageCreation pageCreation = new XhtmlPageCreation(doc1);
-		//
-		// "\\OEBPS" muss bei der nächsten einbindung weg!
-		//
-		pageCreation.createXhtmlPages(tempOutputPath+"\\OEBPS", txtFormat);
+		pageCreation.createXhtmlPages(tempOutputPath, txtFormat);
 		////////STATUS ////////
 		setProgress(80, "Xhtml page creation finished");
 		////////STATUS ////////
@@ -200,7 +202,7 @@ public class MainFrame extends MainFrameDesign implements Runnable{
 		////////STATUS ////////
 		setProgress(81, "Zip creation initialized");
 		////////STATUS ////////
-		CreateZip createZip = new CreateZip(tfOutputPath.getText());
+		EpubZipCreation createZip = new EpubZipCreation(tfOutputPath.getText());
 		createZip.createEpubZip(tempOutputPath);
 		////////STATUS ////////
 		setProgress(100, "Zip creation finished");

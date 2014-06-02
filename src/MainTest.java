@@ -7,6 +7,5 @@ public class MainTest {
 		MainFrame mf = new MainFrame();
 		mf.show();
 		
-		
 	}
 }

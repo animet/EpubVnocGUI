@@ -65,7 +65,7 @@ public class MainFrameDesign {
 	protected void initGuiComponents()
 	{
 		mainFrame = new JFrame();
-		mainFrame.setTitle("EpubConverter");
+		mainFrame.setTitle("EpubVnocGUI");
 		mainFrame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		mainFrame.setResizable(false);
 		
@@ -86,7 +86,7 @@ public class MainFrameDesign {
 		pAdditionalOptions = new JPanel();
 		pAdditionalOptions.setBorder(BorderFactory.createTitledBorder("Additional options:"));
 		lblDeviceResolution = new JLabel("Device resolution:");
-		tfDeviceResolution = new JTextField();
+		tfDeviceResolution = new JTextField("768x1024");
 		tfDeviceResolution.setSize(100, TEXT_FIELD_HEIGHT);
 		//pAdditionalOptions.add(lblDeviceResolution);
 		//pAdditionalOptions.add(tfDeviceResolution);
